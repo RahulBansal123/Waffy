@@ -1,0 +1,22 @@
+type Account @entity {
+  id: ID!
+  blockNumber: BigInt!
+  owner: Bytes!
+  name: Bytes!
+  date: Int!
+}
+
+type Seized @entity {
+  id: ID!
+  index: BigInt!
+  blockNumber: BigInt!
+  seizer: Bytes!
+  date: Int!
+}
+
+type Bid @entity {
+  id: ID!
+  totalBidsCreated: BigDecimal!
+  bidsVolumeMATIC: BigInt!
+  interestPaidMATIC: BigInt!
+}

@@ -1,0 +1,2506 @@
+{
+  "contractName": "IWaffy",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "Cancelled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "Created",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "Drawn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "name",
+          "type": "bytes32"
+        }
+      ],
+      "name": "Registered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "Repaid",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "seizer",
+          "type": "address"
+        }
+      ],
+      "name": "Seized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Underwritten",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "interest",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "endDate",
+          "type": "uint256"
+        }
+      ],
+      "name": "createLoan",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountToDraw",
+          "type": "uint256"
+        }
+      ],
+      "name": "drawLoan",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "repayLoan",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "cancelLoan",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "underWriteLoan",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "seizeLoan",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"Cancelled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"Created\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"Drawn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"name\",\"type\":\"bytes32\"}],\"name\":\"Registered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"Repaid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"seizer\",\"type\":\"address\"}],\"name\":\"Seized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Underwritten\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"cancelLoan\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"interest\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"endDate\",\"type\":\"uint256\"}],\"name\":\"createLoan\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountToDraw\",\"type\":\"uint256\"}],\"name\":\"drawLoan\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"repayLoan\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"seizeLoan\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"underWriteLoan\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"Cancelled(uint256)\":{\"details\":\"Emitted when loan with id `id` is cancelled by its owner\"},\"Created(uint256,address)\":{\"details\":\"Emitted when new NFT-collateralized loan is created with id `id`  `sender`\"},\"Drawn(uint256)\":{\"details\":\"Emitted when amount is withdrawn from the latest bid of loan with id `id`\"},\"Registered(address,bytes32)\":{\"details\":\"Emitted when loan with id `id` is defunded by `sender`\"},\"Repaid(uint256,address)\":{\"details\":\"Emitted when loan with id `id` is repaid by `sender`\"},\"Seized(uint256,address)\":{\"details\":\"Emitted when loan with id `id` is seized by `seizer`\"},\"Underwritten(uint256,address,uint256)\":{\"details\":\"Emitted when loan with id `id` is underwritten by `sender`\"}},\"kind\":\"dev\",\"methods\":{\"cancelLoan(uint256)\":{\"details\":\"Allows the owner of the NFT to cancel the loan with id `id` NOTE: This function can be executed only if there are no bids Emits a {Cancelled} event.\"},\"createLoan(uint256,address,uint256,uint256,uint256)\":{\"details\":\"Create a new NFT-collateralized loan with NFT id `id`  and NFT contract address of `contractAddress`. Interest rate and maximum amount to be taken as loan is fixed  Returns the id of the newly created loan Emits a {Created} event.\"},\"drawLoan(uint256,uint256)\":{\"details\":\"amount `amount` is withdrawn from the latest bid of loan with id `id` by the owner of the NFT Emits a {Drawn} event.\"},\"repayLoan(uint256)\":{\"details\":\"Allows anyone to repay the loan with id `id` NOTE: This function can be executed by the owner of the NFT  or by any user after the timeframe of 1 hour after the loan was terminated. IMPORTANT: NFT will be transaferd to the user repaying the loan Emits a {Repaid} event.\"},\"seizeLoan(uint256)\":{\"details\":\"Allows anyone to seize the loan with id `id` Emits a {Seized} event.\"},\"underWriteLoan(uint256)\":{\"details\":\"Allows the bidders to underwrite the top bids on the loan with id `id` Emits a {Underwritten} event.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IWaffy.sol\":\"IWaffy\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IWaffy.sol\":{\"keccak256\":\"0xfaafeedc13fb8e92e99802473a13ce12cc332440bc9f252b4366ed775bfb5647\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://445ec9e16da3c53ecaf452c399f278c112c29907296e2f1661372c81cbd2c647\",\"dweb:/ipfs/QmTcH51uuxuwuYevU4gtVxr2MW8rKe1uWCDT5EHW5qozci\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "\n// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\ninterface IWaffy {\n    \n     /**\n     * @dev Emitted when new NFT-collateralized loan is created with id `id` \n     * `sender`\n     */\n    event Created(uint256 id, address indexed sender);\n\n    /**\n     * @dev Emitted when amount is withdrawn from the latest bid of loan with\n     * id `id`\n     */\n    event Drawn(uint256 id);\n\n    /**\n     * @dev Emitted when loan with id `id` is repaid by `sender`\n     *\n     */\n    event Repaid(uint256 id, address indexed sender);\n\n    /**\n     * @dev Emitted when loan with id `id` is cancelled by its owner\n     *\n     */\n    event Cancelled(uint256 id);\n\n    /**\n     * @dev Emitted when loan with id `id` is underwritten by\n     * `sender`\n     */\n    event Underwritten(uint256 id, address indexed sender, uint256 amount);\n\n     /**\n     * @dev Emitted when loan with id `id` is seized by\n     * `seizer`\n     */\n    event Seized(uint256 id, address indexed seizer);\n\n    /**\n    * @dev Emitted when loan with id `id` is defunded by\n    * `sender`\n    */\n    event Registered(address indexed owner, bytes32 name);\n\n\n     /**\n     * @dev Create a new NFT-collateralized loan with NFT id `id` \n     * and NFT contract address of `contractAddress`. Interest rate and\n     * maximum amount to be taken as loan is fixed \n     *\n     *\n     * Returns the id of the newly created loan\n     *\n     * Emits a {Created} event.\n     */\n    function createLoan(uint256 id, address contractAddress, uint256 interest, uint256 maxAmount, uint256 endDate) external payable returns (uint256);\n\n\n    /**\n     * @dev amount `amount` is withdrawn from the latest bid of\n     * loan with id `id` by the owner of the NFT\n     *\n     *\n     * Emits a {Drawn} event.\n     */\n    function drawLoan(uint256 id, uint256 amountToDraw) external payable;\n\n\n    /**\n     * @dev Allows anyone to repay the loan with id `id`\n     *\n     * NOTE: This function can be executed by the owner of the NFT \n     * or by any user after the timeframe of 1 hour after the loan was\n     * terminated.\n     *\n     * IMPORTANT: NFT will be transaferd to the user repaying the loan\n     *\n     * Emits a {Repaid} event.\n     */\n    function repayLoan(uint256 id) external payable;\n\n\n    /**\n     * @dev Allows the owner of the NFT to cancel the loan with id `id`\n     *\n     *\n     * NOTE: This function can be executed only if there are no bids\n     *\n     * Emits a {Cancelled} event.\n     */\n    function cancelLoan(uint256 id) external;\n\n\n    /**\n     * @dev Allows the bidders to underwrite the top bids\n     * on the loan with id `id`\n     *\n     * Emits a {Underwritten} event.\n     */\n    function underWriteLoan(uint256 id) external payable;\n\n\n    /**\n     * @dev Allows anyone to seize the loan with id `id`\n     *\n     * Emits a {Seized} event.\n     */\n    function seizeLoan(uint256 id) external payable;\n}",
+  "sourcePath": "/Users/rahulbansal/Desktop/Waffy/frontend/contracts/IWaffy.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IWaffy.sol",
+    "exportedSymbols": {
+      "IWaffy": [
+        4870
+      ]
+    },
+    "id": 4871,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4774,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "34:23:14"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IWaffy",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4870,
+        "linearizedBaseContracts": [
+          4870
+        ],
+        "name": "IWaffy",
+        "nameLocation": "69:6:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4775,
+              "nodeType": "StructuredDocumentation",
+              "src": "88:105:14",
+              "text": " @dev Emitted when new NFT-collateralized loan is created with id `id` \n `sender`"
+            },
+            "eventSelector": "7757890bcab34d673dfca6b71df1b57f75a2fe4231d6e8de726caf534ab1fdd6",
+            "id": 4781,
+            "name": "Created",
+            "nameLocation": "204:7:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4780,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4777,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "220:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4781,
+                  "src": "212:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4776,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "212:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4779,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "240:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4781,
+                  "src": "224:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4778,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "224:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "211:36:14"
+            },
+            "src": "198:50:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4782,
+              "nodeType": "StructuredDocumentation",
+              "src": "254:104:14",
+              "text": " @dev Emitted when amount is withdrawn from the latest bid of loan with\n id `id`"
+            },
+            "eventSelector": "2429a36d5697dc0ddf54bf2c5aa2b4e956614b9d91a88919e9ebd9a0e2bea56d",
+            "id": 4786,
+            "name": "Drawn",
+            "nameLocation": "369:5:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4784,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "383:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4786,
+                  "src": "375:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4783,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "375:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "374:12:14"
+            },
+            "src": "363:24:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4787,
+              "nodeType": "StructuredDocumentation",
+              "src": "393:83:14",
+              "text": " @dev Emitted when loan with id `id` is repaid by `sender`"
+            },
+            "eventSelector": "2193d5fd48f215b92e2de47309d456b760c6387645c71ae0469b7381c0b9ff3c",
+            "id": 4793,
+            "name": "Repaid",
+            "nameLocation": "487:6:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4792,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4789,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "502:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4793,
+                  "src": "494:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4788,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "494:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4791,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "522:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4793,
+                  "src": "506:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4790,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "506:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "493:36:14"
+            },
+            "src": "481:49:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4794,
+              "nodeType": "StructuredDocumentation",
+              "src": "536:87:14",
+              "text": " @dev Emitted when loan with id `id` is cancelled by its owner"
+            },
+            "eventSelector": "c41d93b8bfbf9fd7cf5bfe271fd649ab6a6fec0ea101c23b82a2a28eca2533a9",
+            "id": 4798,
+            "name": "Cancelled",
+            "nameLocation": "634:9:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4797,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4796,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "652:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4798,
+                  "src": "644:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4795,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "644:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "643:12:14"
+            },
+            "src": "628:28:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4799,
+              "nodeType": "StructuredDocumentation",
+              "src": "662:89:14",
+              "text": " @dev Emitted when loan with id `id` is underwritten by\n `sender`"
+            },
+            "eventSelector": "b9254ba92cadc6dd3d4644d03707ec3b908d1f3465c83461f5be7daddaad12ba",
+            "id": 4807,
+            "name": "Underwritten",
+            "nameLocation": "762:12:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4806,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4801,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "783:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4807,
+                  "src": "775:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4800,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4803,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "803:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4807,
+                  "src": "787:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4802,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "787:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4805,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "819:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4807,
+                  "src": "811:14:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4804,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "811:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "774:52:14"
+            },
+            "src": "756:71:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4808,
+              "nodeType": "StructuredDocumentation",
+              "src": "834:83:14",
+              "text": " @dev Emitted when loan with id `id` is seized by\n `seizer`"
+            },
+            "eventSelector": "9d3eb462b228558b8acd346315d1e9d51fca0fdef34bab00a2f86b5ab6868548",
+            "id": 4814,
+            "name": "Seized",
+            "nameLocation": "928:6:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4810,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "943:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4814,
+                  "src": "935:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4809,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "935:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4812,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "seizer",
+                  "nameLocation": "963:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4814,
+                  "src": "947:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4811,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "947:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "934:36:14"
+            },
+            "src": "922:49:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4815,
+              "nodeType": "StructuredDocumentation",
+              "src": "977:82:14",
+              "text": " @dev Emitted when loan with id `id` is defunded by\n `sender`"
+            },
+            "eventSelector": "b8142d42f05d95abf0a6570799774d59276e49ea32a04d9a4ec316ea4a6886bc",
+            "id": 4821,
+            "name": "Registered",
+            "nameLocation": "1070:10:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4820,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4817,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "1097:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4821,
+                  "src": "1081:21:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4816,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1081:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4819,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "1112:4:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4821,
+                  "src": "1104:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4818,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1104:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1080:37:14"
+            },
+            "src": "1064:54:14"
+          },
+          {
+            "documentation": {
+              "id": 4822,
+              "nodeType": "StructuredDocumentation",
+              "src": "1126:303:14",
+              "text": " @dev Create a new NFT-collateralized loan with NFT id `id` \n and NFT contract address of `contractAddress`. Interest rate and\n maximum amount to be taken as loan is fixed \n Returns the id of the newly created loan\n Emits a {Created} event."
+            },
+            "functionSelector": "2a2cf98f",
+            "id": 4837,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createLoan",
+            "nameLocation": "1443:10:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4833,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4824,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "1462:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1454:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4823,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1454:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4826,
+                  "mutability": "mutable",
+                  "name": "contractAddress",
+                  "nameLocation": "1474:15:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1466:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4825,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1466:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4828,
+                  "mutability": "mutable",
+                  "name": "interest",
+                  "nameLocation": "1499:8:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1491:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4827,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1491:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4830,
+                  "mutability": "mutable",
+                  "name": "maxAmount",
+                  "nameLocation": "1517:9:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1509:17:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4829,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1509:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4832,
+                  "mutability": "mutable",
+                  "name": "endDate",
+                  "nameLocation": "1536:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1528:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4831,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1528:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1453:91:14"
+            },
+            "returnParameters": {
+              "id": 4836,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4835,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1571:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4834,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1571:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1570:9:14"
+            },
+            "scope": 4870,
+            "src": "1434:146:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4838,
+              "nodeType": "StructuredDocumentation",
+              "src": "1587:168:14",
+              "text": " @dev amount `amount` is withdrawn from the latest bid of\n loan with id `id` by the owner of the NFT\n Emits a {Drawn} event."
+            },
+            "functionSelector": "7468ac88",
+            "id": 4845,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "drawLoan",
+            "nameLocation": "1769:8:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4843,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4840,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "1786:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4845,
+                  "src": "1778:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4839,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1778:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4842,
+                  "mutability": "mutable",
+                  "name": "amountToDraw",
+                  "nameLocation": "1798:12:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4845,
+                  "src": "1790:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4841,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1790:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1777:34:14"
+            },
+            "returnParameters": {
+              "id": 4844,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1828:0:14"
+            },
+            "scope": 4870,
+            "src": "1760:69:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4846,
+              "nodeType": "StructuredDocumentation",
+              "src": "1836:349:14",
+              "text": " @dev Allows anyone to repay the loan with id `id`\n NOTE: This function can be executed by the owner of the NFT \n or by any user after the timeframe of 1 hour after the loan was\n terminated.\n IMPORTANT: NFT will be transaferd to the user repaying the loan\n Emits a {Repaid} event."
+            },
+            "functionSelector": "ab7b1c89",
+            "id": 4851,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "repayLoan",
+            "nameLocation": "2199:9:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4849,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4848,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2217:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4851,
+                  "src": "2209:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4847,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2209:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2208:12:14"
+            },
+            "returnParameters": {
+              "id": 4850,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2237:0:14"
+            },
+            "scope": 4870,
+            "src": "2190:48:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4852,
+              "nodeType": "StructuredDocumentation",
+              "src": "2245:207:14",
+              "text": " @dev Allows the owner of the NFT to cancel the loan with id `id`\n NOTE: This function can be executed only if there are no bids\n Emits a {Cancelled} event."
+            },
+            "functionSelector": "bdbfa3de",
+            "id": 4857,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cancelLoan",
+            "nameLocation": "2466:10:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4855,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4854,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2485:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4857,
+                  "src": "2477:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4853,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2477:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2476:12:14"
+            },
+            "returnParameters": {
+              "id": 4856,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2497:0:14"
+            },
+            "scope": 4870,
+            "src": "2457:41:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4858,
+              "nodeType": "StructuredDocumentation",
+              "src": "2505:145:14",
+              "text": " @dev Allows the bidders to underwrite the top bids\n on the loan with id `id`\n Emits a {Underwritten} event."
+            },
+            "functionSelector": "855dbf59",
+            "id": 4863,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "underWriteLoan",
+            "nameLocation": "2664:14:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4861,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4860,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2687:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4863,
+                  "src": "2679:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4859,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2679:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2678:12:14"
+            },
+            "returnParameters": {
+              "id": 4862,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2707:0:14"
+            },
+            "scope": 4870,
+            "src": "2655:53:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4864,
+              "nodeType": "StructuredDocumentation",
+              "src": "2715:106:14",
+              "text": " @dev Allows anyone to seize the loan with id `id`\n Emits a {Seized} event."
+            },
+            "functionSelector": "c819422f",
+            "id": 4869,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "seizeLoan",
+            "nameLocation": "2835:9:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4867,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4866,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2853:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4869,
+                  "src": "2845:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4865,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2845:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2844:12:14"
+            },
+            "returnParameters": {
+              "id": 4868,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2873:0:14"
+            },
+            "scope": 4870,
+            "src": "2826:48:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4871,
+        "src": "59:2817:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "34:2842:14"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IWaffy.sol",
+    "exportedSymbols": {
+      "IWaffy": [
+        4870
+      ]
+    },
+    "id": 4871,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4774,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "34:23:14"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IWaffy",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 4870,
+        "linearizedBaseContracts": [
+          4870
+        ],
+        "name": "IWaffy",
+        "nameLocation": "69:6:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4775,
+              "nodeType": "StructuredDocumentation",
+              "src": "88:105:14",
+              "text": " @dev Emitted when new NFT-collateralized loan is created with id `id` \n `sender`"
+            },
+            "eventSelector": "7757890bcab34d673dfca6b71df1b57f75a2fe4231d6e8de726caf534ab1fdd6",
+            "id": 4781,
+            "name": "Created",
+            "nameLocation": "204:7:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4780,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4777,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "220:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4781,
+                  "src": "212:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4776,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "212:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4779,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "240:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4781,
+                  "src": "224:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4778,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "224:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "211:36:14"
+            },
+            "src": "198:50:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4782,
+              "nodeType": "StructuredDocumentation",
+              "src": "254:104:14",
+              "text": " @dev Emitted when amount is withdrawn from the latest bid of loan with\n id `id`"
+            },
+            "eventSelector": "2429a36d5697dc0ddf54bf2c5aa2b4e956614b9d91a88919e9ebd9a0e2bea56d",
+            "id": 4786,
+            "name": "Drawn",
+            "nameLocation": "369:5:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4785,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4784,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "383:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4786,
+                  "src": "375:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4783,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "375:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "374:12:14"
+            },
+            "src": "363:24:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4787,
+              "nodeType": "StructuredDocumentation",
+              "src": "393:83:14",
+              "text": " @dev Emitted when loan with id `id` is repaid by `sender`"
+            },
+            "eventSelector": "2193d5fd48f215b92e2de47309d456b760c6387645c71ae0469b7381c0b9ff3c",
+            "id": 4793,
+            "name": "Repaid",
+            "nameLocation": "487:6:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4792,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4789,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "502:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4793,
+                  "src": "494:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4788,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "494:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4791,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "522:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4793,
+                  "src": "506:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4790,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "506:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "493:36:14"
+            },
+            "src": "481:49:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4794,
+              "nodeType": "StructuredDocumentation",
+              "src": "536:87:14",
+              "text": " @dev Emitted when loan with id `id` is cancelled by its owner"
+            },
+            "eventSelector": "c41d93b8bfbf9fd7cf5bfe271fd649ab6a6fec0ea101c23b82a2a28eca2533a9",
+            "id": 4798,
+            "name": "Cancelled",
+            "nameLocation": "634:9:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4797,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4796,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "652:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4798,
+                  "src": "644:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4795,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "644:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "643:12:14"
+            },
+            "src": "628:28:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4799,
+              "nodeType": "StructuredDocumentation",
+              "src": "662:89:14",
+              "text": " @dev Emitted when loan with id `id` is underwritten by\n `sender`"
+            },
+            "eventSelector": "b9254ba92cadc6dd3d4644d03707ec3b908d1f3465c83461f5be7daddaad12ba",
+            "id": 4807,
+            "name": "Underwritten",
+            "nameLocation": "762:12:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4806,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4801,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "783:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4807,
+                  "src": "775:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4800,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4803,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "803:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4807,
+                  "src": "787:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4802,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "787:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4805,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "819:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4807,
+                  "src": "811:14:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4804,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "811:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "774:52:14"
+            },
+            "src": "756:71:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4808,
+              "nodeType": "StructuredDocumentation",
+              "src": "834:83:14",
+              "text": " @dev Emitted when loan with id `id` is seized by\n `seizer`"
+            },
+            "eventSelector": "9d3eb462b228558b8acd346315d1e9d51fca0fdef34bab00a2f86b5ab6868548",
+            "id": 4814,
+            "name": "Seized",
+            "nameLocation": "928:6:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4813,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4810,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "943:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4814,
+                  "src": "935:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4809,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "935:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4812,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "seizer",
+                  "nameLocation": "963:6:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4814,
+                  "src": "947:22:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4811,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "947:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "934:36:14"
+            },
+            "src": "922:49:14"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 4815,
+              "nodeType": "StructuredDocumentation",
+              "src": "977:82:14",
+              "text": " @dev Emitted when loan with id `id` is defunded by\n `sender`"
+            },
+            "eventSelector": "b8142d42f05d95abf0a6570799774d59276e49ea32a04d9a4ec316ea4a6886bc",
+            "id": 4821,
+            "name": "Registered",
+            "nameLocation": "1070:10:14",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4820,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4817,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "1097:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4821,
+                  "src": "1081:21:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4816,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1081:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4819,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "1112:4:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4821,
+                  "src": "1104:12:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4818,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1104:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1080:37:14"
+            },
+            "src": "1064:54:14"
+          },
+          {
+            "documentation": {
+              "id": 4822,
+              "nodeType": "StructuredDocumentation",
+              "src": "1126:303:14",
+              "text": " @dev Create a new NFT-collateralized loan with NFT id `id` \n and NFT contract address of `contractAddress`. Interest rate and\n maximum amount to be taken as loan is fixed \n Returns the id of the newly created loan\n Emits a {Created} event."
+            },
+            "functionSelector": "2a2cf98f",
+            "id": 4837,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createLoan",
+            "nameLocation": "1443:10:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4833,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4824,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "1462:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1454:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4823,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1454:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4826,
+                  "mutability": "mutable",
+                  "name": "contractAddress",
+                  "nameLocation": "1474:15:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1466:23:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4825,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1466:7:14",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4828,
+                  "mutability": "mutable",
+                  "name": "interest",
+                  "nameLocation": "1499:8:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1491:16:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4827,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1491:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4830,
+                  "mutability": "mutable",
+                  "name": "maxAmount",
+                  "nameLocation": "1517:9:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1509:17:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4829,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1509:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4832,
+                  "mutability": "mutable",
+                  "name": "endDate",
+                  "nameLocation": "1536:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1528:15:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4831,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1528:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1453:91:14"
+            },
+            "returnParameters": {
+              "id": 4836,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4835,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4837,
+                  "src": "1571:7:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4834,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1571:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1570:9:14"
+            },
+            "scope": 4870,
+            "src": "1434:146:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4838,
+              "nodeType": "StructuredDocumentation",
+              "src": "1587:168:14",
+              "text": " @dev amount `amount` is withdrawn from the latest bid of\n loan with id `id` by the owner of the NFT\n Emits a {Drawn} event."
+            },
+            "functionSelector": "7468ac88",
+            "id": 4845,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "drawLoan",
+            "nameLocation": "1769:8:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4843,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4840,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "1786:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4845,
+                  "src": "1778:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4839,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1778:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4842,
+                  "mutability": "mutable",
+                  "name": "amountToDraw",
+                  "nameLocation": "1798:12:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4845,
+                  "src": "1790:20:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4841,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1790:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1777:34:14"
+            },
+            "returnParameters": {
+              "id": 4844,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1828:0:14"
+            },
+            "scope": 4870,
+            "src": "1760:69:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4846,
+              "nodeType": "StructuredDocumentation",
+              "src": "1836:349:14",
+              "text": " @dev Allows anyone to repay the loan with id `id`\n NOTE: This function can be executed by the owner of the NFT \n or by any user after the timeframe of 1 hour after the loan was\n terminated.\n IMPORTANT: NFT will be transaferd to the user repaying the loan\n Emits a {Repaid} event."
+            },
+            "functionSelector": "ab7b1c89",
+            "id": 4851,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "repayLoan",
+            "nameLocation": "2199:9:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4849,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4848,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2217:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4851,
+                  "src": "2209:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4847,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2209:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2208:12:14"
+            },
+            "returnParameters": {
+              "id": 4850,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2237:0:14"
+            },
+            "scope": 4870,
+            "src": "2190:48:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4852,
+              "nodeType": "StructuredDocumentation",
+              "src": "2245:207:14",
+              "text": " @dev Allows the owner of the NFT to cancel the loan with id `id`\n NOTE: This function can be executed only if there are no bids\n Emits a {Cancelled} event."
+            },
+            "functionSelector": "bdbfa3de",
+            "id": 4857,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "cancelLoan",
+            "nameLocation": "2466:10:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4855,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4854,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2485:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4857,
+                  "src": "2477:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4853,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2477:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2476:12:14"
+            },
+            "returnParameters": {
+              "id": 4856,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2497:0:14"
+            },
+            "scope": 4870,
+            "src": "2457:41:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4858,
+              "nodeType": "StructuredDocumentation",
+              "src": "2505:145:14",
+              "text": " @dev Allows the bidders to underwrite the top bids\n on the loan with id `id`\n Emits a {Underwritten} event."
+            },
+            "functionSelector": "855dbf59",
+            "id": 4863,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "underWriteLoan",
+            "nameLocation": "2664:14:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4861,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4860,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2687:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4863,
+                  "src": "2679:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4859,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2679:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2678:12:14"
+            },
+            "returnParameters": {
+              "id": 4862,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2707:0:14"
+            },
+            "scope": 4870,
+            "src": "2655:53:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 4864,
+              "nodeType": "StructuredDocumentation",
+              "src": "2715:106:14",
+              "text": " @dev Allows anyone to seize the loan with id `id`\n Emits a {Seized} event."
+            },
+            "functionSelector": "c819422f",
+            "id": 4869,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "seizeLoan",
+            "nameLocation": "2835:9:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4867,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4866,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2853:2:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4869,
+                  "src": "2845:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4865,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2845:7:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2844:12:14"
+            },
+            "returnParameters": {
+              "id": 4868,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2873:0:14"
+            },
+            "scope": 4870,
+            "src": "2826:48:14",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4871,
+        "src": "59:2817:14",
+        "usedErrors": []
+      }
+    ],
+    "src": "34:2842:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.15+commit.e14f2714.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-07-23T07:27:42.221Z",
+  "devdoc": {
+    "events": {
+      "Cancelled(uint256)": {
+        "details": "Emitted when loan with id `id` is cancelled by its owner"
+      },
+      "Created(uint256,address)": {
+        "details": "Emitted when new NFT-collateralized loan is created with id `id`  `sender`"
+      },
+      "Drawn(uint256)": {
+        "details": "Emitted when amount is withdrawn from the latest bid of loan with id `id`"
+      },
+      "Registered(address,bytes32)": {
+        "details": "Emitted when loan with id `id` is defunded by `sender`"
+      },
+      "Repaid(uint256,address)": {
+        "details": "Emitted when loan with id `id` is repaid by `sender`"
+      },
+      "Seized(uint256,address)": {
+        "details": "Emitted when loan with id `id` is seized by `seizer`"
+      },
+      "Underwritten(uint256,address,uint256)": {
+        "details": "Emitted when loan with id `id` is underwritten by `sender`"
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "cancelLoan(uint256)": {
+        "details": "Allows the owner of the NFT to cancel the loan with id `id` NOTE: This function can be executed only if there are no bids Emits a {Cancelled} event."
+      },
+      "createLoan(uint256,address,uint256,uint256,uint256)": {
+        "details": "Create a new NFT-collateralized loan with NFT id `id`  and NFT contract address of `contractAddress`. Interest rate and maximum amount to be taken as loan is fixed  Returns the id of the newly created loan Emits a {Created} event."
+      },
+      "drawLoan(uint256,uint256)": {
+        "details": "amount `amount` is withdrawn from the latest bid of loan with id `id` by the owner of the NFT Emits a {Drawn} event."
+      },
+      "repayLoan(uint256)": {
+        "details": "Allows anyone to repay the loan with id `id` NOTE: This function can be executed by the owner of the NFT  or by any user after the timeframe of 1 hour after the loan was terminated. IMPORTANT: NFT will be transaferd to the user repaying the loan Emits a {Repaid} event."
+      },
+      "seizeLoan(uint256)": {
+        "details": "Allows anyone to seize the loan with id `id` Emits a {Seized} event."
+      },
+      "underWriteLoan(uint256)": {
+        "details": "Allows the bidders to underwrite the top bids on the loan with id `id` Emits a {Underwritten} event."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
