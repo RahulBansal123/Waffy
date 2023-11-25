@@ -189,12 +189,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Name: Rahul
-Mail: rbbansal558@gmail.com
-Discord: RahulBan#4539
-Twitter: https://twitter.com/rahulbansal_eth
-Unstoppable Domain: rahulbansal.crypto
-
 Project Link: [https://github.com/RahulBansal123/waffy](<[https://github.com/RahulBansal123/waffy](https://github.com/RahulBansal123/waffy)>)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
